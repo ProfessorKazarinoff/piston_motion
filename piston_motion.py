@@ -19,7 +19,7 @@ increment = 0.1 # angle incremement
 
 #create the angle array, where the last angle is the number of rotations*2*pi
 angle_minus_last = np.arange(0,rot_num*2*pi,increment)
-angle = np.append(angle_minus_last, rot_num*2*pi)
+angles = np.append(angle_minus_last, rot_num*2*pi)
 
 
 X1=np.zeros(len(angle)) # array of crank x-positions: Point 1
@@ -28,9 +28,8 @@ X2=np.zeros(len(angle)) # array of rod x-positions: Point 2
 Y2=np.zeros(len(angle)) # array of rod y-positions: Point 2
 
 #find the crank and connecting rod positions for each angle
-for index,angle in enumerate(angle, start=0):
+for index,theta in enumerate(angles, start=0):
 
-        theta=angle
         x1 = r*cos(theta) # x-cooridnate of the crank: Point 1
         y1 = r*sin(theta) # y-cooridnate of the crank: Point 1
         x2 = 0 # x-coordinate of the rod: Point 2
